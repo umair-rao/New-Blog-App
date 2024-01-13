@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 source 'https://rubygems.org'
 
 ruby '3.3.0'
@@ -68,9 +66,5 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
   gem 'selenium-webdriver'
-end
-
-group :development, :test do
-  # ... other gems ...
   gem 'rspec-rails', '~> 5.0'
 end
