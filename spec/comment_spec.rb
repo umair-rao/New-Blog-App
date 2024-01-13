@@ -9,5 +9,4 @@ RSpec.describe Comment, type: :model do
       expect(post.comments_counter).to eq(0)
     end
   end
-  
 end
