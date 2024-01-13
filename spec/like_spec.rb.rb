@@ -1,14 +1,23 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 
-RSpec.describe Comment, type: :model do
+RSpec.describe User, type: :model do
+  let(:user) { User.new(name: 'John Doe', posts_counter: 3) }
+
   describe 'validations' do
-    it 'is valid with a text and author_id' do
-      user = User.create(name: 'John', posts_counter: 0)
-      post = Post.create(title: 'First post', author_id: user.id, comments_counter: 0, likes_counter: 0)
-      comment = Comment.new(text: 'Great post!', author_id: user.id, post_id: post.id)
-      expect(comment).to be_valid
+    it 'requires name' do
+      user.name = nil
+      expect(user).to_not be_valid
+    end
+
+    it 'requires posts_counter to be an integer greater than or equal to zero' do
+      user.posts_counter = -1
+      expect(user).to_not be_valid
+
+      user.posts_counter = 0.5
+      expect(user).to_not be_valid
+
+      user.posts_counter = 2
+      expect(user).to be_valid
     end
   end
 end
