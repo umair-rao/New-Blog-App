@@ -253,6 +253,6 @@ I would like to thanks everyone who showed their support and kindness.
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./LISENCE) licensed.
+This project is [MIT](./LICENSE) licensed.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="/LICENSE">back to top</a>)</p>
