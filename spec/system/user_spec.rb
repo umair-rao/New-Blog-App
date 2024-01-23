@@ -57,5 +57,15 @@ describe 'Use page show ', type: :feature do
       expect(page).to have_content 'post2'
       expect(page).to have_content 'post3'
     end
-
+    it "show button that lets me view all of a user's posts." do
+      expect(page).to have_link(I18n.t('users.show.see_all_posts'))
+    end
+    it "When I click a user's post, it redirects me to that post's show page" do
+      click_link I18n.t('users.show.see_all_posts')
+      expect(page).to have_current_path user_posts_path(@user1, @post_1)
+    end
+    it "When I click to see all posts, it redirects me to the user's post's index page" do
+      click_link I18n.t('users.show.see_all_posts')
+      expect(page).to have_current_path user_posts_path(@user1)
+    end
   end
