@@ -2,15 +2,20 @@ require 'rails_helper'
 
 RSpec.describe 'Post Index', type: :feature do
   before :each do
-    @user = User.create(name: 'Lilly', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from US.', posts_counter: 0)
-    @first_post = Post.create(author_id: @user.id, title: 'First Post', text: 'This is my first post.', comments_counter: 0, likes_counter: 0)
-    @second_post = Post.create(author_id: @user.id, title: 'Second Post', text: 'This is my second post.', comments_counter: 0, likes_counter: 0)
-    @third_post = Post.create(author_id: @user.id, title: 'Third Post', text: 'This is my third post.', comments_counter: 0, likes_counter: 0)
-    @forth_post = Post.create(author_id: @user.id, title: 'Forth Post', text: 'This is my forth post.', comments_counter: 0, likes_counter: 0)
-  
+    @user = User.create(name: 'Lilly', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from US.',
+                        posts_counter: 0)
+    @first_post = Post.create(author_id: @user.id, title: 'First Post', text: 'This is my first post.',
+                              comments_counter: 0, likes_counter: 0)
+    @second_post = Post.create(author_id: @user.id, title: 'Second Post', text: 'This is my second post.',
+                               comments_counter: 0, likes_counter: 0)
+    @third_post = Post.create(author_id: @user.id, title: 'Third Post', text: 'This is my third post.',
+                              comments_counter: 0, likes_counter: 0)
+    @forth_post = Post.create(author_id: @user.id, title: 'Forth Post', text: 'This is my forth post.',
+                              comments_counter: 0, likes_counter: 0)
+
     @like = Like.create(post_id: @forth_post.id, author_id: @user.id)
     visit user_posts_path(@user.id)
-  end  
+  end
 
   it 'I can see the users profile picture' do
     expect(page).to have_css("img[src*='https://unsplash.com/photos/F_-0BxGuVvo']")

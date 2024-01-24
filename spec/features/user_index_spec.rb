@@ -7,7 +7,7 @@ RSpec.describe 'User Index', type: :feature do
     @post = Post.create(author_id: @user.id, title: 'Hello', text: 'This is my first post.', comments_counter: 0,
                         likes_counter: 0)
     visit root_path
-  end  
+  end
 
   it 'I can see the username of all other users' do
     expect(page).to have_content('Lilly')
