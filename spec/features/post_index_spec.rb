@@ -12,8 +12,10 @@ RSpec.describe 'Post Index', type: :feature do
                               comments_counter: 0, likes_counter: 0)
     @forth_post = Post.create(author_id: @user.id, title: 'Forth Post', text: 'This is my forth post.',
                               comments_counter: 0, likes_counter: 0)
-    @comment = Comment.create(post_id: @second_post.id, author_id: @user.id, user_id: @user.id,
-                              text: 'This is my first comment')
+    (1..6).each do |i|
+       Comment.create(post_id: @second_post.id, author_id: @user.id, user_id: @user.id,
+      text: "This is my #{i.ordinalize} comment")
+   end
 
     @like = Like.create(post_id: @second_post.id, author_id: @user.id)
     visit user_posts_path @user.id
@@ -42,7 +44,10 @@ RSpec.describe 'Post Index', type: :feature do
   end
 
   it 'I can see the first comments on a post' do
-    expect(page).to have_content('Lilly')
+    recent_comments = @second_post.recent_comments
+    recent_comments.each do |comment|
+      expect(page).to have_content(comment.text)
+    end
   end
 
   it 'I can see how many comments a post has' do
