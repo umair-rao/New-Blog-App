@@ -13,9 +13,9 @@ RSpec.describe 'Post Index', type: :feature do
     @forth_post = Post.create(author_id: @user.id, title: 'Forth Post', text: 'This is my forth post.',
                               comments_counter: 0, likes_counter: 0)
     (1..6).each do |i|
-       Comment.create(post_id: @second_post.id, author_id: @user.id, user_id: @user.id,
-      text: "This is my #{i.ordinalize} comment")
-   end
+      Comment.create(post_id: @second_post.id, author_id: @user.id, user_id: @user.id,
+                     text: "This is my #{i.ordinalize} comment")
+    end
 
     @like = Like.create(post_id: @second_post.id, author_id: @user.id)
     visit user_posts_path @user.id
