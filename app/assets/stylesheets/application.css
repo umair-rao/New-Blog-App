@@ -164,6 +164,13 @@ a {
   border: 1px solid black;
 }
 
+.login-page,
+.signup-page {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 .login-form {
   display: flex;
   flex-direction: column;
@@ -183,4 +190,9 @@ form {
 
 .login-button {
   width: 305px;
+}
+
+.name {
+  display: flex;
+  flex-direction: column;
 }
