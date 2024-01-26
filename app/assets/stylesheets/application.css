@@ -135,3 +135,64 @@ a {
 .base {
   align-self: flex-end;
 }
+
+#form {
+  width: 500px;
+  margin: auto auto;
+}
+
+.add-post-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.add-post-form label {
+  font-weight: bold;
+}
+
+.like-comment {
+  display: flex;
+  gap: 10px;
+}
+
+.add-comment-btn {
+  height: 40px;
+  width: 70px;
+  padding: 5px;
+  background-color: rgb(221, 218, 218);
+  border: 1px solid black;
+}
+
+.login-page,
+.signup-page {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input-field {
+  width: 300px;
+}
+
+.login-button {
+  width: 305px;
+}
+
+.name {
+  display: flex;
+  flex-direction: column;
+}
