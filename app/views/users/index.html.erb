@@ -1,7 +1,7 @@
 <% @users.each do |user| %>
     <div class='user-data'>
         <div class="image-box">
-            <%= image_tag(user.photo, class: "user-image") %>
+            <%= image(user.photo, class: "user-image") %>
         </div>
         <div class='details-box'>
             <p class='user-name'>
